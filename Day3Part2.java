@@ -14,7 +14,7 @@ public class Day3Part2 {
             while (myReader.hasNextLine()) {
                 Set<Integer> charSet1 = readLineAsSet(myReader);
                 Set<Integer> charSet2 = readLineAsSet(myReader);
-                sum+=myReader.nextLine().chars().boxed()
+                sum += myReader.nextLine().chars().boxed()
                         .filter(c -> charSet1.contains(c) && charSet2.contains(c))
                         .map(Day3Part2::priority)
                         .findFirst()

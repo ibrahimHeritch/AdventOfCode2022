@@ -7,17 +7,17 @@ import java.util.stream.Stream;
 
 public class Day3Part1 {
     public static void main(String args[]) {
-        try(Stream<String> linesStream = Files.lines(new File("src/inputs/input3").toPath())) {
-            long ans = linesStream.map(line->{
+        try (Stream<String> linesStream = Files.lines(new File("src/inputs/input3").toPath())) {
+            long ans = linesStream.map(line -> {
                         Set<Character> charSet = getCharsSetOfSecondHalf(line);
-                        for (char c:line.toCharArray()) {
+                        for (char c : line.toCharArray()) {
                             if (charSet.contains(c)) {
                                 return priority(c);
                             }
                         }
                         throw new IllegalArgumentException("must have to have 1 dup");
                     })
-                    .reduce(0,Integer::sum);
+                    .reduce(0, Integer::sum);
 
             System.out.println(ans);
 

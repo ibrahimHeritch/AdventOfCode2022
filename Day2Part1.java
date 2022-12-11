@@ -6,10 +6,10 @@ import java.util.stream.Stream;
 public class Day2Part1 {
 
     public static void main(String args[]) {
-        try(Stream<String> linesStream = Files.lines(new File("src/inputs/input2").toPath())) {
-            long ans = linesStream.map(line->line.split(" "))
+        try (Stream<String> linesStream = Files.lines(new File("src/inputs/input2").toPath())) {
+            long ans = linesStream.map(line -> line.split(" "))
                     .map(Day2Part1::getRoundScore)
-                    .reduce(0,Integer::sum);
+                    .reduce(0, Integer::sum);
 
             System.out.println(ans);
 

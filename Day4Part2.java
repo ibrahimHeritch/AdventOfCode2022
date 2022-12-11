@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 
 public class Day4Part2 {
     public static void main(String args[]) {
-        try(Stream<String> linesStream = Files.lines(new File("src/inputs/input4").toPath())) {
+        try (Stream<String> linesStream = Files.lines(new File("src/inputs/input4").toPath())) {
             long ans = linesStream
                     .map(l -> Arrays.stream(l.split("-|,")).map(Integer::parseInt).collect(Collectors.toList()))
-                    .filter(l->!( l.get(0)>l.get(3) || l.get(2)>l.get(1)))
+                    .filter(l -> !(l.get(0) > l.get(3) || l.get(2) > l.get(1)))
                     .count();
 
             System.out.println(ans);
